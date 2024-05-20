@@ -383,7 +383,7 @@ func commandBuildx(build Build, builder Builder, dryrun bool, metadataFile strin
 	args := []string{
 		"buildx",
 		"build",
-		"--rm=true",
+		//"--rm=true",
 		"-f", build.Dockerfile,
 	}
 
