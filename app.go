@@ -1,6 +1,7 @@
 package docker
 
 import (
+	"log"
 	"os"
 
 	"github.com/drone-plugins/drone-plugin-lib/drone"
@@ -443,6 +444,11 @@ func run(c *cli.Context) error {
 			return nil
 		}
 	}
+	log.Printf("PLUGIN_REPO ", c.String("repo"))
+	log.Printf("PLUGIN_REGISTRY ", c.String("docker.registry"))
+	log.Printf("DOCKER_USERNAME ", c.String("docker.username"))
+	log.Printf("PLUGIN_BASE_IMAGE_PASSWORD ", c.String("docker.baseimagepassword"))
+	log.Printf("PLUGIN_BASE_IMAGE_REGISTRY ", c.String("docker.baseimageregistry"))
 
 	return plugin.Exec(c)
 }
